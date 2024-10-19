@@ -1,0 +1,59 @@
+﻿<Window x:Class="SimpleMediaPlayer.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Simple Media Player" Height="900" Width="1100">
+    <Grid>
+        <!-- MediaElement з встановленою поведінкою завантаження на Manual -->
+        <MediaElement Name="mediaElement" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"
+                      LoadedBehavior="Manual" UnloadedBehavior="Stop" />
+
+        <!-- Слайдер для перемотки -->
+        <Slider Name="progressSlider" Minimum="0" Maximum="100" Value="0" SmallChange="0" LargeChange="0"
+                VerticalAlignment="Bottom"
+                Margin="10,0,10,60" PreviewMouseUp="Slider_MouseUp" PreviewMouseDown="Slider_PreviewMouseDown" />
+
+        <!-- Панель з кнопками і керуванням -->
+        <StackPanel Orientation="Horizontal" VerticalAlignment="Bottom" HorizontalAlignment="Center">
+            <!-- Кнопка для відкриття файлу -->
+            <Button Click="OpenFile_Click" Width="50" Height="50">
+                <Image Source="open_icon.png" />
+            </Button>
+
+            <!-- Кнопка Play -->
+            <Button Click="Play_Click" Width="50" Height="50" Margin="5">
+                <Image Source="play_icon.png" />
+            </Button>
+
+            <!-- Кнопка Pause -->
+            <Button Click="Pause_Click" Width="50" Height="50" Margin="5">
+                <Image Source="pause_icon.png" />
+            </Button>
+
+            <!-- Кнопка Stop -->
+            <Button Click="Stop_Click" Width="50" Height="50" Margin="5">
+                <Image Source="stop_icon.png" />
+            </Button>
+
+            <!-- Кнопка швидкість 0.5x -->
+            <Button Click="SlowSpeed_Click" Width="50" Height="50" Margin="5" FontSize="24" FontWeight="Bold">
+                0.5x
+            </Button>
+
+            <!-- Кнопка швидкість 1x -->
+            <Button Click="NormalSpeed_Click" Width="50" Height="50" Margin="5" FontSize="24" FontWeight="Bold">
+                1x
+            </Button>
+
+            <!-- Кнопка швидкість 2x -->
+            <Button Click="FastSpeed_Click" Width="50" Height="50" Margin="5" FontSize="24" FontWeight="Bold">
+                2x
+            </Button>
+        </StackPanel>
+        <Slider Name="volumeSlider" Minimum="0" Maximum="1" Value="0.5" VerticalAlignment="Bottom"
+                Width="100" HorizontalAlignment="Right" Margin="0,0,10,30"
+                SmallChange="0" LargeChange="0"
+                ValueChanged="VolumeSlider_ValueChanged" />
+
+        <TextBlock Name="volumeText" Text="Volume" VerticalAlignment="Bottom" HorizontalAlignment="Right" Margin="0,0,120,30" />
+    </Grid>
+</Window>

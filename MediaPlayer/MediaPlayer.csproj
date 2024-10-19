@@ -1,0 +1,26 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <OutputType>WinExe</OutputType>
+        <TargetFramework>net8.0-windows</TargetFramework>
+        <Nullable>enable</Nullable>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <UseWPF>true</UseWPF>
+    </PropertyGroup>
+
+    <ItemGroup>
+     
+    </ItemGroup>
+
+    <ItemGroup>
+      <None Remove="open_icon.png" />
+      <Resource Include="open_icon.png" />
+      <None Remove="pause_icon.png" />
+      <Resource Include="pause_icon.png" />
+      <None Remove="play_icon.png" />
+      <Resource Include="play_icon.png" />
+      <None Remove="stop_icon.png" />
+      <Resource Include="stop_icon.png" />
+    </ItemGroup>
+
+</Project>
